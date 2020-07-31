@@ -7,6 +7,7 @@ class HomePage extends StatelessWidget {
       appBar: AppBar(
         title: Text('Counter Home'),
         centerTitle: true,
+        backgroundColor: Colors.lightGreen,
       ),
       body: Center(
         child: Text('Nobody says it was easy'),
