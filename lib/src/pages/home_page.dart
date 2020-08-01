@@ -3,6 +3,8 @@ import 'package:flutter/material.dart';
 class HomePage extends StatelessWidget {
   final fSize = new TextStyle(fontSize: 27);
 
+  final conterClick = 0;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -20,7 +22,7 @@ class HomePage extends StatelessWidget {
             style: fSize,
           ),
           Text(
-            '0',
+            '$conterClick',
             style: fSize,
           ),
         ],
