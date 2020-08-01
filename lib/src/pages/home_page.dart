@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 
 class HomePage extends StatelessWidget {
+  final fSize = new TextStyle(fontSize: 27);
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -10,8 +12,24 @@ class HomePage extends StatelessWidget {
         backgroundColor: Colors.lightGreen,
       ),
       body: Center(
-        child: Text('Nobody says it was easy'),
-      ),
+          child: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: <Widget>[
+          Text(
+            'Number of clicks',
+            style: fSize,
+          ),
+          Text(
+            '0',
+            style: fSize,
+          ),
+        ],
+      )),
+      floatingActionButton: FloatingActionButton(
+          child: Icon(Icons.add),
+          onPressed: () {
+            print('Hello console');
+          }),
     );
   }
 }
