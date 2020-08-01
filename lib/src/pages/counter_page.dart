@@ -32,14 +32,39 @@ class _CounterPageState extends State<CounterPage> {
           ),
         ],
       )),
-      floatingActionButton: FloatingActionButton(
-          child: Icon(Icons.add),
-          onPressed: () {
-            // print('Hello console');
-            setState(() {
-              _conterClick++;
-            });
-          }),
+      floatingActionButton: _createButtons(),
     );
+  }
+
+  Widget _createButtons() {
+    return Row(
+      mainAxisAlignment: MainAxisAlignment.center,
+      children: <Widget>[
+        SizedBox(
+          width: 30,
+        ),
+        FloatingActionButton(
+            child: Icon(Icons.exposure_zero), onPressed: _resetClick),
+        Expanded(child: SizedBox()),
+        FloatingActionButton(
+            child: Icon(Icons.remove), onPressed: _removeClick),
+        SizedBox(
+          width: 5.0,
+        ),
+        FloatingActionButton(child: Icon(Icons.add), onPressed: _addClick),
+      ],
+    );
+  }
+
+  void _addClick() {
+    setState(() => _conterClick++);
+  }
+
+  void _removeClick() {
+    setState(() => _conterClick--);
+  }
+
+  void _resetClick() {
+    setState(() => _conterClick = 0);
   }
 }
